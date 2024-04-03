@@ -1,0 +1,57 @@
+function isValid(f) {
+    return (
+        !(f.includes(1) && f.includes(2)) &&
+        !(f.includes(3) && f.includes(4)) &&
+        (f.includes(5) === f.includes(6)) &&
+        (f.includes(7) || f.includes(8))
+    )
+}
+===
+isValid = a => !(a.includes(1) && a.includes(2)) &&
+                !(a.includes(3) && a.includes(4)) &&
+                a.includes(5) === a.includes(6) &&
+                (a.includes(7) || a.includes(8));
+===               
+function isValid(formula){
+  
+  const cannot = (a, b) => {
+       const containsA = formula.includes(a);
+       const containsB = formula.includes(b);
+       return containsA !== containsB || !containsA;
+  }                        
+  const must = (a, b) => formula.includes(a) === formula.includes(b);
+  
+  const any = (a, b) => formula.includes(a) || formula.includes(b);
+ 
+  return cannot(1, 2) && cannot(3, 4) && must(5, 6) && any(7, 8);
+}
+===
+function isValid(formula){
+  const has = formula.includes.bind(formula)
+
+  return (
+    has(1) && has(2) ? false :
+    has(3) && has(4) ? false :
+    has(5) ^ has(6) ? false :
+    !has(7) && !has(8) ? false :
+    true
+  )
+}
+===
+function isValid(formula){
+  if(formula.includes(1) && formula.includes(2)) {
+    return false;
+  }
+  else if(formula.includes(3) && formula.includes(4)) {
+    return false;
+  }
+  else if(formula.includes(5) != formula.includes(6)) {
+    return false;
+  }
+  else if(formula.includes(7) || formula.includes(8)) {
+    return true; 
+  } 
+  else {
+    return false;
+  }
+}

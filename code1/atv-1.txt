@@ -1,0 +1,14 @@
+Requisitos:
+
+criar uma função que valide se uma fórmula para confecção de reagente é válida ou não.
+
+ A fórmula é representada por um array de inteiros, onde cada número de 1 a 8 representa um material específico. 
+ 
+ As regras para validar a fórmula são:
+
+[X] O material 1 e o material 2 não podem ser selecionados ao mesmo tempo.
+[X] O material 3 e o material 4 não podem ser selecionados ao mesmo tempo.
+[X] O material 5 e o material 6 devem ser selecionados ao mesmo tempo.
+[X] Pelo menos um dos materiais 7 ou 8 deve ser selecionado.
+
+[ ] A função deve retornar verdadeiro se a fórmula for válida e falso caso contrário.

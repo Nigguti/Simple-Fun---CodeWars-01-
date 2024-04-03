@@ -1,0 +1,46 @@
+function isValid(formula){
+const tem = formula.includes.bind(formula);
+
+return {
+    !(tem(1) && tem(2)) &&
+    !(tem(3) && tem(4)) &&
+     (tem(5) != tem(6)) &&
+     (tem(7) || tem(8))
+}
+} *Falhou* o retornou deve ser igual a false e não true
+
+function isValid(formula){
+    const has = formula.include.bind(formula)
+
+    if(has(1) && has(2)){
+        return false;
+    }
+
+    else if (has(3) && has(4)){
+        return false;
+    }
+
+    else if (has(5) === has(6)){
+        return true;
+    }
+
+    else if (has(7) || has(8)){
+        return true;
+    }
+
+    else {
+        return false;
+    }
+} *Certo* mais não aceito nas normas do código limpo.. não é muito legivel
+
+function isValid(formula){
+    const tem = formula.includes.bind(formula);
+
+    return {
+        !(tem(1) && tem(2)) &&
+        !(tem(3) && tem(4)) &&
+         (tem(5) === tem(6)) &&
+         (tem(7) || tem(8))
+    }
+} *correto* aceito pelas normas do código limpo
+
